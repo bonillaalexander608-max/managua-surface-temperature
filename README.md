@@ -34,7 +34,7 @@ python scripts/evaluar_2026.py
 python scripts/reentrenar.py
 ```
 
-The evaluation script uses the included processed panel. The retraining script writes the final Ridge pipeline and cell histories. Run the first cell of `notebooks/02_prueba_modelo_guardado.ipynb` with the working directory set to the repository root for a clean-session prediction demonstration. Retraining before loading the bundled model avoids cross-version joblib compatibility issues. The original research notebook records acquisition and exploratory steps. Some acquisition steps require an authorized Google Earth Engine project.
+The evaluation script uses the included processed panel. The retraining script writes the final Ridge pipeline and cell histories. Run the first cell of `notebooks/02_prueba_modelo_guardado.ipynb` with the working directory set to the repository root for a clean-session prediction demonstration. Retraining before loading the bundled model avoids cross-version joblib compatibility issues. The original research notebook records acquisition and exploratory steps. The committed panel is gzip-compressed; the standalone scripts read it directly. To use the original notebook cells that expect an uncompressed CSV, extract the panel to `data/predictores/managua_panel_con_predictores.csv` first. Some acquisition steps require an authorized Google Earth Engine project.
 
 ## Data sources and scope
 
