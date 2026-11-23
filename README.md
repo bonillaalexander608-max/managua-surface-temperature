@@ -47,3 +47,37 @@ The evaluation script uses the included processed panel. The retraining script w
 The final Ridge model was retrained on all 18 scenes from 2023–2026. The 2027 maps are demonstrations. Prospective evaluation requires predictions archived before confirmed Landsat acquisitions and paired observations on the same cells and dates. The multi-date band is exploratory and has no nominal coverage.
 
 ![Four-date demonstration](figures/mapa_promedio_y_banda.png)
+
+## Extended temporal experiment
+
+The chronological experiment uses an expanding window. Every forecast uses
+only earlier scenes for training and for the cell-history baseline. It compares
+that baseline with direct Ridge and an additive model that corrects cell
+history with a scene-wide offset and a spatial deviation. The scene model
+uses one training row per date. The output includes cell MAE, absolute
+scene-mean error, and MAE after removing the scene-mean error. Scene-mean
+errors describe the cells observed on that date.
+
+```bash
+python scripts/evaluar_componentes.py
+```
+
+To inventory all months from 2013 and build the expanded panel, install the
+acquisition dependencies and initialize credentials for an authorized Earth
+Engine project. The cutoff date is exclusive. Run with `--solo-inventario`
+to review scene availability before downloading rasters.
+
+```bash
+python -m pip install -r requirements-adquisicion.txt
+python scripts/ampliar_serie.py --proyecto-ee YOUR_PROJECT --hasta 2026-11-23 --solo-inventario
+python scripts/ampliar_serie.py --proyecto-ee YOUR_PROJECT --hasta 2026-11-23
+python scripts/evaluar_componentes.py --panel data/serie_ampliada/panel_ampliado.csv.gz
+```
+
+Optional `--meteo` accepts a CSV with one row per date, a `fecha` column and
+numeric predictors available by overpass time. Reanalysis inputs support
+retrospective experiments. WorldCover 2021 is a fixed land mask and a fixed
+predictor snapshot, so evaluations on dates before 2021 with these features
+are historical reconstructions. Report the calendar-only pilot separately
+from full-season models. The original 2026 evaluation uses a different
+protocol with cell histories frozen at the end of 2025.
