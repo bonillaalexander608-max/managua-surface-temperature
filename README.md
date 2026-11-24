@@ -47,3 +47,15 @@ The evaluation script uses the included processed panel. The retraining script w
 The final Ridge model was retrained on all 18 scenes from 2023–2026. The 2027 maps are demonstrations. Prospective evaluation requires predictions archived before confirmed Landsat acquisitions and paired observations on the same cells and dates. The multi-date band is exploratory and has no nominal coverage.
 
 ![Four-date demonstration](figures/mapa_promedio_y_banda.png)
+
+## Heat ranking update
+
+The historical recurrence ranking and the XGBoost challenger prioritize 250 m
+cells for the observed hottest decile in each Landsat scene. The expanded review
+budget is the top 20% of ranked cells.
+
+[Ranking results and reproduction instructions](ranking/README.md) ·
+[Download the reproducible package](ranking/managua_actualizacion_reproducible.zip)
+
+The package includes the archived forecast for 2026-11-25. Its prospective
+evaluation is pending the observed thermal scene.
