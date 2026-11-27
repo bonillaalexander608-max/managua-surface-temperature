@@ -40,12 +40,22 @@ conserva el flujo de adquisición y experimentación.
 
 ## Evaluación prospectiva
 
-La emisión del 24 de noviembre a las 16:02, hora de Managua, guarda los
-rankings para el sobrevuelo esperado del 25 de noviembre. Contiene 4,536
-celdas, con 454 en prioridad inicial y 908 en revisión ampliada. La
-evaluación queda pendiente de la escena térmica.
+La emisión se archivó el 24 de noviembre de 2026 a las 16:02, hora de
+Managua. Landsat 9 adquirió la escena el 25 de noviembre a las 10:06.
+Las dos listas permanecieron fijas. Hubo 4,212 celdas con temperatura
+válida y 422 en el decil caliente observado.
 
-Para evaluarla, abrí `evaluacion_prospectiva.ipynb` en el entorno
-geoespacial con Earth Engine autenticado. El notebook cruza las listas
-archivadas con la escena observada y reporta las celdas seleccionadas
-que quedaron sin temperatura válida.
+| Lista archivada | Recurrencia histórica | XGBoost |
+|---|---:|---:|
+| 10 % · 454 celdas | 285/422 (67.54 %) | 243/422 (57.58 %) |
+| 20 % · 908 celdas | 383/422 (90.76 %) | 359/422 (85.07 %) |
+
+Al 20 %, quedaron sin observación válida 32 celdas de recurrencia y 26
+de XGBoost. Entre las seleccionadas observables, la precisión fue 43.72 %
+y 40.70 %, respectivamente. La comparación corresponde a un sobrevuelo.
+
+![Contraste prospectivo al 20 %](prospectiva/2026-11-25/mapa_contraste_20pct.png)
+
+- [Métricas al 10 % y 20 %](prospectiva/2026-11-25/metricas_10_y_20.csv)
+- [Contraste por celda](prospectiva/2026-11-25/contraste_por_celda.csv)
+- [Metadatos de adquisición y emisión](prospectiva/2026-11-25/metadatos_evaluacion.json)

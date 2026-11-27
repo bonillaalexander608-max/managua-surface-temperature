@@ -57,5 +57,9 @@ budget is the top 20% of ranked cells.
 [Ranking results and reproduction instructions](ranking/README.md) ·
 [Download the reproducible package](ranking/managua_actualizacion_reproducible.zip)
 
-The package includes the archived forecast for 2026-11-25. Its prospective
-evaluation is pending the observed thermal scene.
+The first prospective evaluation used the rankings archived before the
+November 25, 2026 Landsat 9 overpass. At the 20% review budget, historical
+recurrence recovered 383 of 422 observed hot cells (90.76%) and XGBoost
+recovered 359 (85.07%).
+
+[Prospective results, map, and cell-level data](ranking/README.md#evaluación-prospectiva)

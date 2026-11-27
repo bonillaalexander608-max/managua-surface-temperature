@@ -1,0 +1,10 @@
+{
+  "escena": "LANDSAT/LC09/C02/T1_L2/LC09_017052_20261125",
+  "adquisicion_utc": "2026-11-25T16:06:29.331000+00:00",
+  "emision_local": "2026-11-24T16:02:20-06:00",
+  "ranking_usado": "ranking/managua_actualizacion_reproducible.zip#resultados/emisiones_prospectivas/2026-11-25_20261124_160220_434845/ranking_prospectivo.csv",
+  "celdas_termicas_aptas": 4212,
+  "celdas_calientes": 422,
+  "celdas_calientes_fuera_del_ranking": 0,
+  "pixeles_validos_minimos_por_celda": 20
+}

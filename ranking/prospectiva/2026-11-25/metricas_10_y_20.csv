@@ -1,0 +1,5 @@
+modelo,corte_pct,seleccionadas_archivadas,seleccionadas_con_observacion,seleccionadas_sin_observacion,calientes_observadas_total,aciertos,calientes_omitidas,recuperacion_pct,precision_observable_pct,cobertura_observada_lista_pct
+Recurrencia histórica,10,454,435,19,422,285,137,67.53554502369668,65.51724137931035,95.81497797356828
+Recurrencia histórica,20,908,876,32,422,383,39,90.75829383886256,43.721461187214615,96.47577092511013
+XGBoost óptica + distancia,10,454,441,13,422,243,179,57.58293838862559,55.10204081632653,97.13656387665198
+XGBoost óptica + distancia,20,908,882,26,422,359,63,85.07109004739337,40.702947845804985,97.13656387665198
